@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Diary - Mohit Donawat</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- PDF libs (global) -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Logo & Welcome -->
+  <div class="logo-box">
+    <img src="logo.png" alt="Love Diary Logo">
+  </div>
+  <div class="welcome-box">
+    <h1>Welcome to Mohit Donawat Diary</h1>
+    <p class="subtitle">A personal diary with ❤️ love theme</p>
+  </div>
+
+  <!-- =============== AUTH SECTION =============== -->
+  <div id="auth-section" class="auth-box">
+    <h2>Login / Sign Up</h2>
+
+    <!-- Admin Login -->
+    <h3>Admin Login</h3>
+    <input type="email" id="adminEmail" placeholder="Admin Email (only: l7290539@gmail.com)">
+    <input type="password" id="adminPassword" placeholder="Admin Password">
+    <button id="adminLoginBtn">Admin Login</button>
+
+    <hr>
+
+    <!-- User Signup/Login -->
+    <h3>User Sign Up / Login</h3>
+    <input type="text" id="name" placeholder="Your Name (for Signup)">
+    <input type="email" id="email" placeholder="User Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="signupBtn">User Sign Up</button>
+    <button id="loginBtn">User Login</button>
+    <button id="googleBtn">Login with Google</button>
+  </div>
+
+  <!-- =============== USER SECTION =============== -->
+  <div id="user-section" style="display:none; width:100%;">
+    <!-- PROFILE -->
+    <div id="profile-section" class="diary-box">
+      <h2>Your Profile</h2>
+      <div class="profile-row">
+        <img id="profile-pic" src="https://via.placeholder.com/80" alt="User Photo">
+        <div class="profile-info">
+          <p><b>Name:</b> <span id="profile-name">—</span></p>
+          <p><b>Email:</b> <span id="profile-email">—</span></p>
+        </div>
+      </div>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+    <!-- DIARY -->
+    <div id="diary-section" class="diary-box">
+      <h2 id="welcome-user">Welcome to Mohit Donawat Diary</h2>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="left-tools">
+          <input type="color" id="noteColor" value="#ffe4ec" title="Choose Note Color" />
+          <input type="date" id="filterDate" title="Filter by Date" />
+          <button id="clearFilterBtn">Clear Filter</button>
+        </div>
+        <div class="right-tools">
+          <button id="exportPDFAllBtn">Export All PDF</button>
+          <button id="printAllBtn">Print All</button>
+          <button id="shareAllBtn">Share All</button>
+        </div>
+      </div>
+
+      <!-- Emoji Bar -->
+      <div id="emoji-bar" class="emoji-bar">😀 😂 😍 🥰 😘 ❤️ 💖 💘 💝 💞 💟 💔 😭 🤗 🙏 🌹 💐 ✨ 💫 🎉</div>
+
+      <!-- New Note -->
+      <textarea id="note-input" placeholder="Write your diary entry..."></textarea>
+      <input type="password" id="notePassword" placeholder="Set password for this note (optional)">
+      <button id="saveBtn">Save Entry</button>
+
+      <!-- Search -->
+      <input type="text" id="searchNotes" placeholder="Search your notes...">
+
+      <!-- Notes List -->
+      <ul id="notes-list"></ul>
+    </div>
+  </div>
+
+  <!-- =============== ADMIN SECTION =============== -->
+  <div id="admin-section" class="diary-box" style="display:none;">
+    <h2>Welcome Admin - Mohit Donawat Diary</h2>
+    <input type="text" id="searchUser" placeholder="Search user email...">
+    <ul id="all-notes-list"></ul>
+    <button id="logoutAdminBtn">Logout</button>
+  </div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
