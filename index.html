@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Diary - Mohit Donawat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Logo -->
+  <div class="logo-box">
+    <img src="logo.png" alt="Love Diary Logo">
+  </div>
+
+  <!-- Welcome -->
+  <div class="welcome-box">
+    <h1>Welcome to Mohit Donawat Diary</h1>
+    <p class="subtitle">A personal diary with ❤️ love theme</p>
+  </div>
+
+  <!-- Auth Section -->
+  <div id="auth-section" class="auth-box">
+    <h2>Login / Sign Up</h2>
+    <h3>Admin Login</h3>
+    <input type="email" id="adminEmail" placeholder="Admin Email">
+    <input type="password" id="adminPassword" placeholder="Admin Password">
+    <button id="adminLoginBtn">Admin Login</button>
+    <hr>
+    <h3>User Login / Sign Up</h3>
+    <input type="text" id="name" placeholder="Your Name (for signup)">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="signupBtn">Sign Up</button>
+    <button id="loginBtn">Login</button>
+    <button id="googleBtn">Login with Google</button>
+  </div>
+
+  <!-- User Section -->
+  <div id="user-section" style="display:none;">
+    <div class="diary-box">
+      <h2 id="welcome-user">Welcome to Mohit Donawat Diary</h2>
+      <div class="toolbar">
+        <input type="color" id="noteColor" value="#ffe4ec">
+        <input type="date" id="filterDate">
+        <button id="clearFilterBtn">Clear Filter</button>
+        <button id="exportPDFAllBtn">Export All PDF</button>
+        <button id="printAllBtn">Print All</button>
+        <button id="shareAllBtn">Share All</button>
+      </div>
+      <div id="emoji-bar" class="emoji-bar">😀 😂 😍 🥰 😘 ❤️ 💖 💘 💝 💞 💔 😭 🤗 🌹 💐 ✨ 🎉</div>
+      <textarea id="note-input" placeholder="Write your diary entry..."></textarea>
+      <input type="password" id="notePassword" placeholder="Set password (optional)">
+      <button id="saveBtn">Save Entry</button>
+      <input type="text" id="searchNotes" placeholder="Search notes...">
+      <ul id="notes-list"></ul>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </div>
+
+  <!-- Admin Section -->
+  <div id="admin-section" style="display:none;">
+    <div class="diary-box">
+      <h2>Welcome Admin - Mohit Donawat Diary</h2>
+      <input type="text" id="searchUser" placeholder="Search user email...">
+      <ul id="all-notes-list"></ul>
+      <button id="logoutAdminBtn">Logout</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
